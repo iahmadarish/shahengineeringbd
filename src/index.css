@@ -2,11 +2,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* Custom theme configuration */
 @theme {
   --font-family-sans: "Inter", system-ui, sans-serif;
   --font-family-small: "Pathway Extreme", sans-serif;
+  --font-family-medium: "Share", sans-serif;
+
 
   /* Primary colors */
   --color-primary-50: #eff6ff;

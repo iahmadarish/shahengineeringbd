@@ -7,7 +7,7 @@ import ScrollToTop from "../components/ScrollToTop"
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <div className="font-family-small">
       <ScrollToTop/>
       {/* Hero Section */}
       {/* <section className="bg-gradient-to-r from-primary-600 to-primary-800 text-white section-padding">

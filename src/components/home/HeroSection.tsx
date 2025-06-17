@@ -136,7 +136,7 @@ const HeroSection = () => {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-4xl lg:text-6xl font-bold leading-tight"
+              className="text-4xl lg:text-6xl font-family-medium font-bold leading-tight"
             >
               {currentSlideData.title}
             </motion.h1>
@@ -145,7 +145,7 @@ const HeroSection = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="text-xl text-blue-100 leading-relaxed max-w-lg"
+              className="text-xl font-family-small text-blue-100 leading-relaxed max-w-lg"
             >
               {currentSlideData.description}
             </motion.p>
