@@ -28,7 +28,7 @@ const Header: React.FC = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1">
               <Phone className="h-4 w-4" />
-              <span>+880 1234-567890</span>
+              <span>+88 01819454892</span>
             </div>
             <div className="flex items-center space-x-1">
               <Mail className="h-4 w-4" />

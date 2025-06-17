@@ -1,11 +1,13 @@
 import type React from "react"
 import ScrollToTop from "../components/ScrollToTop"
+import AboutHero from "../components/about/aboutHero"
+import MissionAbout from "../components/about/MissionAbout"
 
 const About: React.FC = () => {
   return (
-    <div className="section-padding">
+    <div className="">
       <ScrollToTop/>
-      <div className="container">
+      {/* <div className="container">
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">About ConstructCorp</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -20,7 +22,9 @@ const About: React.FC = () => {
             relevant details here.
           </p>
         </div>
-      </div>
+      </div> */}
+      <AboutHero/>
+      <MissionAbout/>
     </div>
   )
 }
