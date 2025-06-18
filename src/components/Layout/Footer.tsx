@@ -4,14 +4,14 @@ import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "luc
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-secondary-900 text-white">
+    <footer className="bg-secondary-900 text-white font-family-small">
       <div className="container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="bg-primary-600 text-white p-2 rounded-lg">
-                <span className="text-lg font-bold">CC</span>
+                <span className="text-lg font-bold">SE</span>
               </div>
               <div>
                 <h3 className="text-lg font-bold">Shah Engineering</h3>

@@ -191,7 +191,8 @@ export const services = [
     {
         "id": 8,
         "serviceType": "LPG Bottling Plant Pipeline",
-        "shortDetails": "Professional LPG bottling plant and pipeline construction services, fully compliant with safety, efficiency, and regulatory standards.",
+        "shortDetails": "Professional LPG bottling plant and pipeline construction services, fully compliant with safety, efficiency, and regulatory standards.We specialize in the complete design and setup of LPG bottling plants tailored to the specific requirements of industrial and commercial clients. Our expert engineers work closely with project stakeholders to deliver high-capacity plants that ensure safe and efficient LPG handling, storage, and bottling processes.",
+        
         "fullDetails": [
             "We specialize in the complete design and setup of LPG bottling plants tailored to the specific requirements of industrial and commercial clients. Our expert engineers work closely with project stakeholders to deliver high-capacity plants that ensure safe and efficient LPG handling, storage, and bottling processes.",
             "Our team provides expert pipeline engineering and installation services, from initial routing to final commissioning. We use durable, industry-approved materials and precision engineering techniques to guarantee the safe transport of LPG across short and long distances with minimal loss and risk.",

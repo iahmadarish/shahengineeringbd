@@ -15,13 +15,13 @@ const ServiceDetail: React.FC = () => {
     }
 
     return (
-        <div>
+        <div className="font-family-heading">
             <ScrollToTop />
             {/* Breadcrumb & Back Button */}
-            <section className="bg-gray-50 py-8">
+            <section className="bg-black py-8">
                 <div className="container">
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2 text-sm text-gray-600">
+                        <div className="flex items-center space-x-2 text-sm text-white">
                             <Link to="/" className="hover:text-primary-600">
                                 Home
                             </Link>
@@ -34,7 +34,7 @@ const ServiceDetail: React.FC = () => {
                         </div>
                         <Link
                             to="/services"
-                            className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
+                            className="inline-flex items-center text-white hover:text-primary-700 font-medium"
                         >
                             <ArrowLeft className="h-4 w-4 mr-2" />
                             Back to Services
@@ -47,7 +47,6 @@ const ServiceDetail: React.FC = () => {
             <section className="section-padding bg-white">
                 <div className="container">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
                         <div>
                             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">{service.serviceType}</h1>
                             <p className="text-xl font-family-small text-gray-600 mb-8 leading-relaxed">{service.shortDetails}</p>
@@ -127,7 +126,7 @@ const ServiceDetail: React.FC = () => {
                                 </div>
                             </div>
 
-                            <div className=" space-y-4 mt-8 gap-x-4  flex ">
+                            <div className=" space-y-4 mt-8 gap-x-4  md:lg:xl:flex ">
                                 {/* <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Features & Benefits</h3> */}
                                 <img
                                     src={service.images[0] || "/placeholder.svg?height=500&width=600"}
@@ -162,7 +161,7 @@ const ServiceDetail: React.FC = () => {
                                     </div>
                                     <div className="flex items-start">
                                         <MapPin className="h-5 w-5 text-primary-600 mr-3 mt-0.5" />
-                                        <span className="text-gray-700">123 Construction Street, Dhaka, Bangladesh</span>
+                                        <span className="text-gray-700">Mirpur 6, Road-1, Plot-2, Dhaka, Bangladesh 1216</span>
                                     </div>
                                 </div>
 
@@ -203,7 +202,7 @@ const ServiceDetail: React.FC = () => {
                             </div>
 
                             {/* Stats */}
-                            <div className="bg-primary-600 text-white rounded-xl shadow-lg p-6">
+                            <div className="bg-primary-600 font-family-small text-white rounded-xl shadow-lg p-6">
                                 <h3 className="text-xl font-bold mb-4">Why Choose Us</h3>
                                 <div className="space-y-4">
                                     <div className="text-center">
@@ -226,9 +225,9 @@ const ServiceDetail: React.FC = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="bg-primary-600 text-white py-16">
+            <section className="bg-primary-600 font-family-small text-white py-16">
                 <div className="container text-center">
-                    <h2 className="text-3xl lg:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+                    <h2 className="text-3xl lg:text-4xl font-bold mb-6 font-family-heading">Ready to Get Started?</h2>
                     <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
                         Contact us today to discuss your {service.serviceType.toLowerCase()} requirements and get a customized
                         solution.

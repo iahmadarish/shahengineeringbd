@@ -5,7 +5,7 @@ import MissionAbout from "../components/about/MissionAbout"
 
 const About: React.FC = () => {
   return (
-    <div className="">
+    <div className="font-family-small">
       <ScrollToTop/>
       {/* <div className="container">
         <div className="text-center mb-16">

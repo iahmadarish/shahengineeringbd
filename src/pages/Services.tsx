@@ -27,11 +27,11 @@ const Services: React.FC = () => {
 
       <ScrollToTop/>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-primary-800 text-white section-padding">
-        <div className="container">
+      <section className="bg-[url('https://t4.ftcdn.net/jpg/05/08/17/91/360_F_508179173_uHJlUv8ZNCAvkuxDCHhgDcTqI3Qx5MQ2.jpg')] bg-cover bg-center h-full w-full text-black section-padding">
+        <div className="container ">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">Our Professional Services</h1>
-            <p className="text-xl text-primary-100 leading-relaxed">
+            {/* <h1 className="text-4xl lg:text-6xl font-bold  font-family-heading">What we do</h1> */}
+            <p className="text-xl text-primary-100 leading-relaxed font-family-small">
               Comprehensive construction and engineering solutions delivered by our expert team with over 25 years of
               industry experience.
             </p>
@@ -42,14 +42,6 @@ const Services: React.FC = () => {
       {/* Services Grid */}
       <section className="section-padding bg-gray-50">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">What We Do</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From manufacturing workforce to specialized construction services, we provide end-to-end solutions for all
-              your project needs.
-            </p>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
               <div
@@ -71,14 +63,14 @@ const Services: React.FC = () => {
 
                 {/* Service Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                  <h3 className="text-xl font-bold font-family-medium text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
                     {service.serviceType}
                   </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3">{service.shortDetails}</p>
+                  <p className="text-gray-600 mb-4 line-clamp-3 font-family-small">{service.shortDetails}</p>
 
                   {/* Key Points */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-2">Key Features:</h4>
+                  <div className="mb-6 font-family-small">
+                    <h4 className="font-semibold text-gray-900 mb-2 font-family-medium">Key Features:</h4>
                     <ul className="space-y-1">
                       {service.bulletPoints.slice(0, 3).map((point, index) => (
                         <li key={index} className="flex items-center text-sm text-gray-600">
@@ -92,7 +84,7 @@ const Services: React.FC = () => {
                   {/* CTA Button */}
                   <Link
                     to={`/services/${service.id}`}
-                    className="inline-flex items-center justify-center w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 group"
+                    className="inline-flex items-center justify-center font-family-small w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 group"
                   >
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -109,13 +101,13 @@ const Services: React.FC = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Why Choose Our Services?</h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 font-family-heading">Why Choose Our Services?</h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed font-family-small">
                 With over 25 years of experience in the construction and engineering industry, we deliver exceptional
                 results that exceed client expectations.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 font-family-small">
                 <div className="flex items-start space-x-3">
                   <div className="bg-primary-100 p-2 rounded-lg">
                     <CheckCircle className="h-6 w-6 text-primary-600" />
@@ -171,7 +163,7 @@ const Services: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-primary-600 text-white section-padding">
+      <section className="bg-primary-600 text-white section-padding font-family-small">
         <div className="container text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">Need a Custom Solution?</h2>
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
