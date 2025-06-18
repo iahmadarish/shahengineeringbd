@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { ArrowRight, CheckCircle, Users, Wrench, Shield, Building } from 'lucide-react'
+import { ArrowRight, CheckCircle, Users, Wrench, Shield, Building, ChevronDown, ExternalLink } from 'lucide-react'
 import { services } from "../data/service"
 import ScrollToTop from "../components/ScrollToTop"
 
@@ -25,18 +25,121 @@ const Services: React.FC = () => {
   return (
     <div>
 
-      <ScrollToTop/>
+      <ScrollToTop />
       {/* Hero Section */}
-      <section className="bg-[url('https://t4.ftcdn.net/jpg/05/08/17/91/360_F_508179173_uHJlUv8ZNCAvkuxDCHhgDcTqI3Qx5MQ2.jpg')] bg-cover bg-center h-full w-full text-black section-padding">
-        <div className="container ">
-          <div className="text-center max-w-4xl mx-auto">
-            {/* <h1 className="text-4xl lg:text-6xl font-bold  font-family-heading">What we do</h1> */}
-            <p className="text-xl text-primary-100 leading-relaxed font-family-small">
-              Comprehensive construction and engineering solutions delivered by our expert team with over 25 years of
-              industry experience.
-            </p>
+      {/* Enhanced Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute bg-fixed inset-0">
+          <div
+            className="absolute  inset-0 bg-[url('https://www.renoirgroup.com/wp-content/uploads/2023/08/4-actions-to-drive-operational-excellence-in-construction_v2.jpg')] bg-cover bg-center bg-fixed"
+            style={{
+              transform: `translateY(${scrollY * 0.5}px)`,
+            }}
+          />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/50" />
+
+          {/* Floating particles */}
+          <div className="absolute inset-0">
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-2 h-2 bg-white/30 rounded-full animate-float"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${i * 0.5}s`,
+                  animationDuration: `${3 + Math.random() * 2}s`
+                }}
+              />
+            ))}
           </div>
         </div>
+
+        <div className="relative z-10 container section-padding text-center">
+          <div className="max-w-6xl mx-auto">
+
+            {/* Main Content */}
+            <div className="mb-16">
+              {/* Badge */}
+              <div className="inline-flex items-center px-6 py-3 mb-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white">
+                <span className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></span>
+                <span className="text-sm font-medium">Professional Services Since 1998</span>
+              </div>
+
+              {/* Main Heading */}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-white leading-tight">
+                <span className="block">Excellence in</span>
+                <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
+                  Construction
+                </span>
+                <span className="block">& Engineering</span>
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+                Transforming visions into reality with 25+ years of expertise in construction,
+                engineering, and architectural solutions that exceed expectations.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+                <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-blue-500/25">
+                  <span className="relative z-10 flex items-center justify-center">
+                    Explore Our Services
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+
+                <button className="group px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                  <span className="flex items-center justify-center">
+                    View Portfolio
+                    <ExternalLink className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            {/* Stats Section */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+              {[
+                { number: "25+", label: "Years Experience", icon: "🏆" },
+                { number: "500+", label: "Projects Completed", icon: "🏗️" },
+                { number: "98%", label: "Client Satisfaction", icon: "⭐" },
+                { number: "24/7", label: "Support Available", icon: "🛡️" }
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="group p-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                >
+                  <div className="text-3xl mb-2">{stat.icon}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:scale-110 transition-transform">
+                    {stat.number}
+                  </div>
+                  <div className="text-sm text-gray-300 font-medium">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+          <div className="flex flex-col items-center cursor-pointer group">
+            <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center group-hover:border-white transition-colors">
+              <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+            </div>
+            <ChevronDown className="mt-2 h-4 w-4 opacity-70 group-hover:opacity-100 transition-opacity" />
+          </div>
+        </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute top-1/4 left-8 w-px h-24 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+        <div className="absolute top-1/3 right-8 w-px h-32 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
       </section>
 
       {/* Services Grid */}
@@ -156,7 +259,7 @@ const Services: React.FC = () => {
                 alt="Our Services"
                 className="rounded-lg shadow-xl"
               />
- 
+
             </div>
           </div>
         </div>

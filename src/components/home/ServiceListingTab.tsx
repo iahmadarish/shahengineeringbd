@@ -52,7 +52,7 @@ const ServiceListingTab = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto py-22 font-family-small">
+    <div className="max-w-7xl mx-auto p-6">
       {/* Header */}
       <div className="mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -75,24 +75,29 @@ const ServiceListingTab = () => {
                 style={{ backgroundImage: `url(${service.image})` }}
               />
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-              <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/20 transition-colors duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors duration-300"></div>
             </div>
             
             {/* Content */}
             <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-              {/* Divider */}
-              <div className="w-12 h-0.5 bg-blue-400 mb-3 group-hover:w-16 transition-all duration-300"></div>
+              {/* Background for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent rounded-b-xl"></div>
               
-              {/* Title */}
-              <h3 className="text-xl font-bold mb-2 group-hover:text-blue-200 transition-colors duration-300">
-                {service.title}
-              </h3>
-              
-              {/* Description */}
-              <p className="text-sm text-gray-200 opacity-90 leading-relaxed">
-                {service.description}
-              </p>
+              <div className="relative z-10">
+                {/* Divider */}
+                <div className="w-12 h-0.5 bg-blue-400 mb-3 group-hover:w-16 transition-all duration-300"></div>
+                
+                {/* Title */}
+                <h3 className="text-xl font-bold mb-2 text-white drop-shadow-lg">
+                  {service.title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-sm text-gray-100 leading-relaxed drop-shadow-sm">
+                  {service.description}
+                </p>
+              </div>
             </div>
 
             {/* Hover Effect Border */}
