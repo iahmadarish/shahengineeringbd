@@ -4,54 +4,13 @@ import { ArrowRight, CheckCircle, Users, Award, Clock } from "lucide-react"
 import HeroSection from "../components/home/HeroSection"
 import ServiceListingTab from "../components/home/ServiceListingTab"
 import ScrollToTop from "../components/ScrollToTop"
+import AboutFaq from "../components/home/AboutFaq"
 
 const Home: React.FC = () => {
   return (
     <div className="font-family-small">
       <ScrollToTop/>
-      {/* Hero Section */}
-      {/* <section className="bg-gradient-to-r from-primary-600 to-primary-800 text-white section-padding">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-                Building Tomorrow's
-                <span className="text-primary-200"> Infrastructure</span>
-              </h1>
-              <p className="text-xl text-primary-100 mb-8 leading-relaxed">
-                Leading construction and engineering firm delivering innovative solutions for complex infrastructure
-                projects with excellence and reliability.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/projects"
-                  className="bg-white text-primary-600 hover:bg-primary-50 font-semibold py-3 px-8 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
-                >
-                  View Our Projects
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-                <Link
-                  to="/contact"
-                  className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-3 px-8 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
-                >
-                  Get Free Quote
-                </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="/placeholder.svg?height=500&width=600"
-                alt="Construction Site"
-                className="rounded-lg shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white text-primary-600 p-6 rounded-lg shadow-xl">
-              <div className="text-3xl font-bold">25+</div>
-              <div className="text-sm font-medium">Years Experience</div>
-              </div>
-              </div>
-          </div>
-        </div>
-        </section> */}
+      
       <HeroSection/>
 
       {/* Stats Section */}
@@ -263,7 +222,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
+      
+      <AboutFaq/>
       {/* CTA Section */}
       <section className="bg-primary-600 text-white section-padding">
         <div className="container text-center">
