@@ -14,21 +14,21 @@ const Home: React.FC = () => {
       <HeroSection/>
 
       {/* Stats Section */}
-      <section className="bg-blue-800  py-16">
+      <section className="bg-blue-800  py-6">
         <div className="">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-primary-600" />
               </div>
-              <div className="text-3xl font-bold text-white mb-2">500+</div>
+              <div className="text-3xl font-bold text-white mb-2">15+</div>
               <div className="text-white">Happy Clients</div>
             </div>
             <div className="text-center">
               <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8 text-primary-600" />
               </div>
-              <div className="text-3xl font-bold text-white mb-2">200+</div>
+              <div className="text-3xl font-bold text-white mb-2">12+</div>
               <div className="text-white">Projects Completed</div>
             </div>
             <div className="text-center">
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
               <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="h-8 w-8 text-primary-600" />
               </div>
-              <div className="text-3xl font-bold text-white mb-2">25+</div>
+              <div className="text-3xl font-bold text-white mb-2">2+</div>
               <div className="text-white  ">Years Experience</div>
             </div>
           </div>
