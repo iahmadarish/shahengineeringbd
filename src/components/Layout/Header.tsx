@@ -147,7 +147,7 @@ const Header: React.FC = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <img src={logo} className="h-16 w-full" alt="" />
+                    <img src={logo} className="h-16 " alt="" />
                   </motion.div>
                 </Link>
                 <button
