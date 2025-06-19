@@ -25,7 +25,7 @@ const itemVariants = {
 const MissionAbout = () => {
   return (
     <div className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen py-16 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="mx-auto px-6 xl:2xl:lg:px-20">
         {/* Animated Header */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}

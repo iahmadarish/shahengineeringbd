@@ -29,7 +29,7 @@ const AboutHero = () => {
         <div className="absolute bottom-20 left-1/3 w-48 h-48 border border-purple-300 rounded-full animate-pulse delay-2000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-12">
+      <div className="relative z-10  mx-auto px-6 xl:2xl:lg:px-20 pt-20 pb-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           
           {/* Left Column - Content */}

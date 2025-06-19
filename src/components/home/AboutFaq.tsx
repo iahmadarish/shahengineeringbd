@@ -350,7 +350,7 @@ const AboutFaq: React.FC = () => {
             <HelpCircle className="h-8 w-8 text-primary-600" />
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Find answers to common questions about our construction services, processes, and expertise.
           </p>
         </motion.div>
@@ -402,7 +402,7 @@ const AboutFaq: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-5xl mx-auto space-y-4"
+          className="max-w-7xl mx-auto space-y-4"
         >
           {filteredFaqs.map((faq) => (
             <motion.div
