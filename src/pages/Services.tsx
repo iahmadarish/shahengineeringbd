@@ -32,7 +32,7 @@ const Services: React.FC = () => {
         {/* Background Image with Overlay */}
         <div className="absolute bg-fixed inset-0">
           <div
-            className="absolute  inset-0 bg-[url('https://www.renoirgroup.com/wp-content/uploads/2023/08/4-actions-to-drive-operational-excellence-in-construction_v2.jpg')] bg-cover bg-center bg-fixed"
+            className="absolute  inset-0 bg-[url('https://www.bodellconstruction.com/wp-content/uploads/2021/11/iStock-929029342-1024x684.jpg')] bg-cover bg-center bg-fixed"
             style={{
               transform: `translateY(${scrollY * 0.5}px)`,
             }}
@@ -87,7 +87,7 @@ const Services: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
                 <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-blue-500/25">
                   <span className="relative z-10 flex items-center justify-center">
-                    Explore Our Services
+                    Explore Article
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -95,7 +95,7 @@ const Services: React.FC = () => {
 
                 <button className="group px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105">
                   <span className="flex items-center justify-center">
-                    View Portfolio
+                    View Projects
                     <ExternalLink className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                   </span>
                 </button>
@@ -105,8 +105,8 @@ const Services: React.FC = () => {
             {/* Stats Section */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {[
-                { number: "25+", label: "Years Experience", icon: "🏆" },
-                { number: "500+", label: "Projects Completed", icon: "🏗️" },
+                { number: "2+", label: "Years Experience", icon: "🏆" },
+                { number: "5+", label: "Projects Completed", icon: "🏗️" },
                 { number: "98%", label: "Client Satisfaction", icon: "⭐" },
                 { number: "24/7", label: "Support Available", icon: "🛡️" }
               ].map((stat, index) => (

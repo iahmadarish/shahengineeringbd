@@ -336,7 +336,7 @@ const AboutFaq: React.FC = () => {
   }
 
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding font-family-small bg-gray-50">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -402,7 +402,7 @@ const AboutFaq: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-4xl mx-auto space-y-4"
+          className="max-w-5xl mx-auto space-y-4"
         >
           {filteredFaqs.map((faq) => (
             <motion.div
@@ -413,7 +413,7 @@ const AboutFaq: React.FC = () => {
               {/* Question */}
               <motion.button
                 onClick={() => toggleFaq(faq.id)}
-                className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                className="w-full bg-blue-800 text-white p-6 text-left flex items-center justify-between hover:bg-blue-700 transition-colors duration-200"
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
               >
@@ -426,7 +426,7 @@ const AboutFaq: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">{faq.question}</h3>
+                    <h3 className="text-lg font-semibold text-white mb-1">{faq.question}</h3>
                     <span className="inline-block px-3 py-1 bg-primary-50 text-primary-600 text-xs font-medium rounded-full">
                       {faq.category}
                     </span>
@@ -440,7 +440,7 @@ const AboutFaq: React.FC = () => {
                   {activeId === faq.id ? (
                     <Minus className="h-6 w-6 text-primary-600" />
                   ) : (
-                    <Plus className="h-6 w-6 text-gray-400" />
+                    <Plus className="h-6 w-6 text-white" />
                   )}
                 </motion.div>
               </motion.button>

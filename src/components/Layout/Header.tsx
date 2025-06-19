@@ -1,3 +1,5 @@
+"use client"
+
 import type React from "react"
 import { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
@@ -5,8 +7,8 @@ import { Menu, X, Phone, Mail } from "lucide-react"
 import { motion, AnimatePresence, type Variants } from "framer-motion"
 
 interface NavigationItem {
-  name: string;
-  href: string;
+  name: string
+  href: string
 }
 
 const Header: React.FC = () => {
@@ -24,57 +26,47 @@ const Header: React.FC = () => {
 
   const isActive = (path: string): boolean => location.pathname === path
 
-  // Animation variants
+  // Animation variants for mobile only
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      },
+    },
   }
 
   const itemVariants: Variants = {
     hidden: { y: -20, opacity: 0 },
-    show: { 
-      y: 0, 
+    show: {
+      y: 0,
       opacity: 1,
       transition: {
         type: "spring" as const,
-        stiffness: 100
-      }
-    }
+        stiffness: 100,
+      },
+    },
   }
 
   const mobileMenuVariants: Variants = {
-    open: { 
+    open: {
       x: 0,
-      transition: { type: "spring" as const, stiffness: 300, damping: 30 }
+      transition: { type: "spring" as const, stiffness: 300, damping: 30 },
     },
-    closed: { 
+    closed: {
       x: "100%",
-      transition: { type: "spring" as const, stiffness: 300, damping: 30 }
-    }
+      transition: { type: "spring" as const, stiffness: 300, damping: 30 },
+    },
   }
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
-      {/* Top Bar */}
-      <motion.div 
-        initial={{ y: -20 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="bg-blue-900 text-white py-2"
-      >
+      {/* Top Bar - No animations */}
+      <div className="bg-blue-900 text-white py-2">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
-          <motion.div 
-            className="flex items-center space-x-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
+          <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1 hover:text-blue-200 transition-colors">
               <Phone className="h-4 w-4" />
               <span>+88 01819454892</span>
@@ -83,107 +75,70 @@ const Header: React.FC = () => {
               <Mail className="h-4 w-4" />
               <span>info@shahengineering.com</span>
             </div>
-          </motion.div>
-          <motion.div 
-            className="hidden md:block"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
+          </div>
+          <div className="hidden md:block">
             <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Main Navigation */}
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          {/* Logo with animation */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          {/* Logo - No animations */}
+          <div>
             <Link to="/" className="flex items-center space-x-2">
-              <motion.div 
-                className="bg-blue-900 text-white p-2 rounded-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <div className="bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-800 transition-colors">
                 <span className="text-xl font-bold">SE</span>
-              </motion.div>
+              </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Shah Engineering</h1>
                 <p className="text-sm text-gray-600">Engineering Excellence</p>
               </div>
             </Link>
-          </motion.div>
+          </div>
 
-          {/* Desktop Navigation */}
-          <motion.div 
-            className="hidden md:flex items-center space-x-8"
-            initial="hidden"
-            animate="show"
-            variants={containerVariants}
-          >
+          {/* Desktop Navigation - No animations */}
+          <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item: NavigationItem) => (
-              <motion.div key={item.name} variants={itemVariants}>
+              <div key={item.name}>
                 <Link
                   to={item.href}
                   className={`relative font-medium transition-colors duration-200 ${
-                    isActive(item.href)
-                      ? "text-blue-600"
-                      : "text-gray-700 hover:text-blue-600"
+                    isActive(item.href) ? "text-blue-600" : "text-gray-700 hover:text-blue-600"
                   }`}
                 >
                   {item.name}
-                  {isActive(item.href) && (
-                    <motion.span 
-                      className="absolute left-0 -bottom-1 w-full h-0.5 bg-blue-600"
-                      layoutId="activeIndicator"
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    />
-                  )}
+                  {isActive(item.href) && <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-blue-600" />}
                 </Link>
-              </motion.div>
+              </div>
             ))}
-            <motion.div variants={itemVariants}>
-              <Link 
-                to="/contact" 
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 relative overflow-hidden group"
+            <div>
+              <Link
+                to="/contact"
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
               >
-                <span className="relative z-10">Get Quote</span>
-                <motion.span 
-                  className="absolute inset-0 bg-blue-700 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
-                  initial={{ scaleX: 0 }}
-                />
+                Get Quote
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Mobile menu button */}
-          <motion.div 
-            className="md:hidden z-50"
-            whileTap={{ scale: 0.9 }}
-          >
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)} 
+          <motion.div className="md:hidden z-50" whileTap={{ scale: 0.9 }}>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 hover:text-blue-600 p-2 rounded-full transition-colors"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </motion.div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Animations preserved */}
         <AnimatePresence>
           {isMenuOpen && (
-            <motion.div 
+            <motion.div
               className="md:hidden fixed inset-0 bg-blue-900 bg-opacity-95 z-40"
               initial="closed"
               animate="open"
@@ -193,7 +148,7 @@ const Header: React.FC = () => {
               {/* Mobile Header with Logo and Close Button */}
               <div className="flex justify-between items-center p-4 border-b border-blue-700">
                 <Link to="/" className="flex items-center space-x-2" onClick={() => setIsMenuOpen(false)}>
-                  <motion.div 
+                  <motion.div
                     className="bg-white text-blue-900 p-2 rounded-lg"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -205,8 +160,8 @@ const Header: React.FC = () => {
                     <p className="text-xs text-blue-200">Engineering Excellence</p>
                   </div>
                 </Link>
-                <button 
-                  onClick={() => setIsMenuOpen(false)} 
+                <button
+                  onClick={() => setIsMenuOpen(false)}
                   className="text-white hover:text-blue-200 p-2 rounded-full transition-colors"
                   aria-label="Close menu"
                 >
@@ -214,24 +169,19 @@ const Header: React.FC = () => {
                 </button>
               </div>
 
-              <motion.div 
+              <motion.div
                 className="flex flex-col space-y-4 pt-8 px-4 text-white"
                 variants={containerVariants}
                 initial="hidden"
                 animate="show"
               >
                 {navigation.map((item: NavigationItem) => (
-                  <motion.div 
-                    key={item.name} 
-                    variants={itemVariants}
-                    whileHover={{ x: 10 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
+                  <motion.div key={item.name} variants={itemVariants} whileHover={{ x: 10 }} whileTap={{ scale: 0.95 }}>
                     <Link
                       to={item.href}
                       className={`block text-xl font-medium transition-all duration-200 px-4 py-3 rounded-lg ${
-                        isActive(item.href) 
-                          ? "bg-white text-black font-bold" 
+                        isActive(item.href)
+                          ? "bg-white text-black font-bold"
                           : "text-blue-200 hover:text-white hover:bg-blue-800"
                       }`}
                       onClick={() => setIsMenuOpen(false)}
@@ -240,14 +190,14 @@ const Header: React.FC = () => {
                     </Link>
                   </motion.div>
                 ))}
-                <motion.div 
+                <motion.div
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="pt-4"
                 >
-                  <Link 
-                    to="/contact" 
+                  <Link
+                    to="/contact"
                     className="block bg-white text-blue-900 px-6 py-3 rounded-lg font-bold text-lg text-center"
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -257,7 +207,7 @@ const Header: React.FC = () => {
               </motion.div>
 
               {/* Contact info in mobile menu */}
-              <motion.div 
+              <motion.div
                 className="mt-12 pt-6 border-t border-blue-700 text-blue-100 px-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

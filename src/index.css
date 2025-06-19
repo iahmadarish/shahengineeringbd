@@ -70,3 +70,45 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 } */
+
+
+.service-detail-swiper .swiper-button-next,
+.service-detail-swiper .swiper-button-prev {
+  color: #059669;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.service-detail-swiper .swiper-button-next:hover,
+.service-detail-swiper .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+.service-detail-swiper .swiper-button-next:after,
+.service-detail-swiper .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.service-detail-swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.service-detail-swiper .swiper-pagination-bullet-active {
+  background: #059669;
+  border-color: white;
+  transform: scale(1.2);
+}
+
+.service-detail-swiper .swiper-pagination {
+  bottom: 20px;
+}
