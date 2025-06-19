@@ -2,6 +2,7 @@ import type React from "react"
 import ScrollToTop from "../components/ScrollToTop"
 import AboutHero from "../components/about/aboutHero"
 import MissionAbout from "../components/about/MissionAbout"
+import Team from "../components/about/Team"
 
 const About: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const About: React.FC = () => {
         </div>
       </div> */}
       <AboutHero/>
+      <Team/>
       <MissionAbout/>
     </div>
   )

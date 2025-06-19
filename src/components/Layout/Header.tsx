@@ -65,7 +65,7 @@ const Header: React.FC = () => {
     <header className="bg-white shadow-lg sticky top-0 z-50">
       {/* Top Bar - No animations */}
       <div className="bg-blue-900 text-white py-2">
-        <div className="container mx-auto px-4 flex justify-between items-center text-sm">
+        <div className=" mx-auto px-8 flex justify-between items-center text-sm">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1 hover:text-blue-200 transition-colors">
               <Phone className="h-4 w-4" />
@@ -83,7 +83,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Main Navigation */}
-      <nav className="container mx-auto px-4 py-4">
+      <nav className=" mx-auto px-8 py-4">
         <div className="flex justify-between items-center">
           {/* Logo - No animations */}
           <div>
