@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { Menu, X, Phone, Mail } from "lucide-react"
 import { motion, AnimatePresence, type Variants } from "framer-motion"
-
+import logo from "../../../public/shah.png"
 interface NavigationItem {
   name: string
   href: string
@@ -87,14 +87,8 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo - No animations */}
           <div>
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-blue-900 text-white p-2 rounded-lg hover:bg-blue-800 transition-colors">
-                <span className="text-xl font-bold">SE</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">Shah Engineering</h1>
-                <p className="text-sm text-gray-600">Engineering Excellence</p>
-              </div>
+            <Link to="/" className="">
+                <img src={logo} className="h-16 w-full" alt="" />
             </Link>
           </div>
 
@@ -130,7 +124,7 @@ const Header: React.FC = () => {
               className="text-gray-700 hover:text-blue-600 p-2 rounded-full transition-colors"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <p className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </motion.div>
         </div>
@@ -146,23 +140,19 @@ const Header: React.FC = () => {
               variants={mobileMenuVariants}
             >
               {/* Mobile Header with Logo and Close Button */}
-              <div className="flex justify-between items-center p-4 border-b border-blue-700">
+              <div className="flex bg-white justify-between items-center px-4 border-b border-blue-700">
                 <Link to="/" className="flex items-center space-x-2" onClick={() => setIsMenuOpen(false)}>
                   <motion.div
-                    className="bg-white text-blue-900 p-2 rounded-lg"
+                    className="bg- text-blue-900 p-2 rounded-lg"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span className="text-lg font-bold">SE</span>
+                    <img src={logo} className="h-16 w-full" alt="" />
                   </motion.div>
-                  <div>
-                    <h1 className="text-lg font-bold text-white">Shah Engineering</h1>
-                    <p className="text-xs text-blue-200">Engineering Excellence</p>
-                  </div>
                 </Link>
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-white hover:text-blue-200 p-2 rounded-full transition-colors"
+                  className="text-white bg-blue-800 hover:text-blue-200 p-2 rounded-full transition-colors"
                   aria-label="Close menu"
                 >
                   <X className="h-6 w-6" />
